@@ -1,0 +1,80 @@
+/* Archivo: styles.css */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #0d0d0d;
+    color: #ffffff;
+    overflow-x: hidden;
+  }
+  
+  header {
+    text-align: center;
+    padding: 2rem;
+    background: linear-gradient(135deg, #1f1c2c, #928dab);
+    color: white;
+  }
+  
+  nav {
+    background-color: #1a1a1a;
+    padding: 1rem;
+    text-align: center;
+  }
+  
+  nav ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  nav li {
+    display: inline;
+    margin: 0 1rem;
+  }
+  
+  nav a {
+    text-decoration: none;
+    color: #00ffe0;
+    transition: color 0.3s;
+  }
+  
+  nav a:hover {
+    color: #ffffff;
+  }
+  
+  main {
+    padding: 2rem;
+  }
+  
+  .modalidad {
+    background-color: #1a1a1a;
+    margin: 2rem 0;
+    padding: 2rem;
+    border-left: 5px solid #00ffe0;
+    box-shadow: 0 0 10px #00ffe066;
+    transition: transform 0.3s;
+  }
+  
+  .modalidad:hover {
+    transform: translateY(-5px);
+  }
+  
+  footer {
+    background-color: #111;
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.9rem;
+  }
+  
+  /* Archivo: script.js */
+  document.addEventListener("DOMContentLoaded", () => {
+    const sections = document.querySelectorAll(".modalidad");
+    sections.forEach((section, i) => {
+      section.style.opacity = 0;
+      section.style.transform = "translateY(20px)";
+      setTimeout(() => {
+        section.style.transition = "all 0.8s ease-out";
+        section.style.opacity = 1;
+        section.style.transform = "translateY(0)";
+      }, i * 300);
+    });
+  });
+  
